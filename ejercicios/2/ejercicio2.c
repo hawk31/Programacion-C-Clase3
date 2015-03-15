@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <getopt.h>
 #include "concesionario.h"
+#include <string.h>
 
 int main(int argc, char *argv[])
 {
@@ -33,21 +34,23 @@ int main(int argc, char *argv[])
 		}
 		switch(val){
 		case 'm':
-			auxistr = argv[2];
+			auxistr = optarg;
 			curso_coche_attr_set_str(c, CURSO_COCHE_ATTR_MATRICULA, auxistr);
 			break;
 		
 		case 'i':
-
-			curso_coche_attr_set_u32(c, CURSO_COCHE_ATTR_ID, val);
+			auxiint = atoi(optarg);
+			curso_coche_attr_set_u32(c, CURSO_COCHE_ATTR_ID, auxiint);
 			break;
 
 		case 'g':
-			curso_coche_attr_set_str(c, CURSO_COCHE_ATTR_MARCA, val);
+			auxistr = optarg;
+			curso_coche_attr_set_str(c, CURSO_COCHE_ATTR_MARCA, auxistr);
 			break;
 		
 		case 'd':
-			curso_concesionario_attr_set_str(con, CURSO_CONCESIONARIO_ATTR_DUENO, val);
+			auxistr = optarg;
+			curso_concesionario_attr_set_str(con, CURSO_CONCESIONARIO_ATTR_DUENO, auxistr);
 			break;
 		case 'h':
 			printf("Toma ayuda chachi \n");
