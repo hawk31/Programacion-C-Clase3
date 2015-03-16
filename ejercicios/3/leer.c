@@ -73,7 +73,7 @@ void main(int argc, char *argv[])
 				curso_coche_attr_set_str(c, CURSO_COCHE_ATTR_MARCA, pt);
 				break;
 			case 3:
-				curso_concesionario_attr_set_str(con, CURSO_CONCESIONARIO_ATTR_DUENO, auxistr);
+				curso_concesionario_attr_set_str(con, CURSO_CONCESIONARIO_ATTR_DUENO, pt);
 				break;
 
 			}
