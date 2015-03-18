@@ -17,6 +17,7 @@ struct gestor_tareas *curso_gestor_tareas_alloc(void)
 		return NULL;
 
 	INIT_LIST_HEAD(&gt->tareas);
+	gt ->flags |= (1 << CURSO_GESTOR_TAREAS_ATTR_NUM_TAREAS);
 
 	return gt;
 }
